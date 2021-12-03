@@ -9,21 +9,22 @@ const routes: Routes = [
     component: PokemonesPage
   },
   {
-    path: 'pokemones-view',
+    path: 'view/:id',
     loadChildren: () => import('./pokemones-view/pokemones-view.module').then( m => m.PokemonesViewPageModule)
   },
   {
-    path: 'pokemones-create',
+    path: 'new',
     loadChildren: () => import('./pokemones-create/pokemones-create.module').then( m => m.PokemonesCreatePageModule)
   },
   {
-    path: 'pokemones-edit',
+    path: 'edit/:id',
     loadChildren: () => import('./pokemones-edit/pokemones-edit.module').then( m => m.PokemonesEditPageModule)
   },
   {
-    path: 'pokemones-delete',
+    path: 'delete/:id',
     loadChildren: () => import('./pokemones-delete/pokemones-delete.module').then( m => m.PokemonesDeletePageModule)
   }
+  
 ];
 
 @NgModule({

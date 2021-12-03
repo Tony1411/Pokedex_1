@@ -91,7 +91,7 @@ app.put('/pokemons/:id', function(req, res){
 
     connection.connect();
 
-    var myQuery = ["UPDATE pokemon SET modified_date = NOW()"];
+    var myQuery = "UPDATE pokemon SET modified_date = NOW()";
     var myValues = [];
 
     if (req.body.nombre){
