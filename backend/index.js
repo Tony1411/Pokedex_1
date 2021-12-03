@@ -95,7 +95,7 @@ app.put('/pokemons/:id', function(req, res){
     var myValues = [];
 
     if (req.body.nombre){
-      myQuery += " nombre = ? ";
+      myQuery += " , nombre = ? ";
       myValues.push(req.body.nombre);
     }
     if (req.body.altura){

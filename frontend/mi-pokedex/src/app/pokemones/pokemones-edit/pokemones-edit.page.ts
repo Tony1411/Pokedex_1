@@ -29,7 +29,7 @@ export class PokemonesEditPage implements OnInit {
        habilidad: [''],
        tipo: [''],
        img: ['']
-    })    
+    });    
   }
 
   ngOnInit() {
@@ -38,7 +38,7 @@ export class PokemonesEditPage implements OnInit {
         this.id = data.get('id');
         this.pokemonesService.getPokemonsById(this.id).subscribe(
           response => {
-            console.log(response),
+            console.log(response);
             this.pokemon = response;
             this.pokemonForm.patchValue(response);
           },
@@ -50,8 +50,8 @@ export class PokemonesEditPage implements OnInit {
     );
   }
 
-  actualizarPokemon(values : any){
-    this.pokemonesService.editPokemon(this.id, values).subscribe(response => {
+  actualizarPokemon(pokemon : any){
+    this.pokemonesService.editPokemon(this.id, pokemon).subscribe(response => {
       console.log(response);
       this.router.navigate(['/pokemons']);
     }, error => {
